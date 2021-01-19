@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import challenges.samples.EmailAdapter;
+import challenges.samples.EmailAgent;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +17,7 @@ public class EmailTest {
 
   @Test
   public void testRun_AdapterIsCompliantWithProtocol_AppHasHelloMessage() throws Exception {
-    IAgent user = new UserAgent();
+    IAgent user = new EmailAgent("hello");
     Map<String, IAdapter> adapters = new HashMap<String, IAdapter>();
     adapters.put("EMAIL", new EmailAdapter());
 
